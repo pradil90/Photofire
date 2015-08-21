@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login Page</title>
+
+  <!-- <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'> -->
+
+    <!-- <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" /> -->
+
+
+    <script>
+function validateForm() {
+    var x = document.forms["myForm"]["user"].value;
+    var x = document.forms["myForm"]["pass"].value;
+    if (x=="Admin" || x=="Admin") {
+        alert("Login Successfull");
+        // window.location = "file:///Users/pradil90/Desktop/Assignment2/MathFormula.html"
+        // window.location = "../Assignment2/MathFormula.html"
+        return false;
+    }else{
+      alert("Invalid credentials:Login Unsuccessfull");
+    }
+}
+
+
+function saveData(key, value){
+    
+    sessionStorage[key] = value;
+}
+
+function getData(key){
+    
+    return sessionStorage[key];
+}
+
+function clear(){
+    
+     sessionStorage.clear();
+}
+
+
+function formUpdater(){
+    
+                document.getElementById("user").value="alice";
+                document.getElementById("lastuser").value="rinita";
+                document.getElementById("email").value="rini@gmail.com";
+                document.getElementById("pass").value="okay";
+                document.getElementById("pass1").value="okays";
+                document.getElementById("ssn").value="111-222-3333";
+                document.getElementById("phone").value="111-333-2222";
+                document.getElementById("creditnum").value="1111-2222-3333-4444";
+
+                document.forms[0].submit()
+}
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+  <style>
+
+               table, th, td {
+                  /*border: 1px solid black;*/
+
+                  width: 500px;
+                  height: 40px;
+              }
+
+
+              div {
+                  background-color: white;
+                  width: 800px;
+                  height: 700px;
+                  padding: 25px;
+                  border: 5px solid navy;
+                  margin: 25px;
+                  text-align: left;
+
+                 }
+        </style>
+ <center><div>
+  
+       
+          <center><h1>Registration Page</h1></center><br>
+
+         
+      
+
+
+        <form name="myForm">
+          <fieldset>
+                <table>
+                        <tr>
+                          <td>First name: </td><td><input type="text" name="user" placeholder="Username"></td></tr>
+                         <tr><td> Last name: </td><td><input type="password" name="pass" placeholder="Last name"></td></tr>
+                          <tr><td>Email:</td> <td><input type="text" name="email" placeholder="Email ID"></td></tr>
+                          <tr><td>Password: </td><td><input type="password" name="pass" placeholder="Password">&nbsp<progress value="70" max="100"></progress></td></tr>
+                          <tr><td>Re-Enter Password:</td> <td><input type="password" name="pass1" placeholder="Re-Enter Password"> 
+                       </table> 
+                <hr>
+                <table>
+                          <tr><td>SSN </td> <td><input type="text" name="pass" placeholder="876-987-xxxx"></td> <td>
+                          <tr><td>Phone Number </td> <td><input type="text" name="pass" placeholder="eg.408-876-9878" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"></td> <td>
+
+                          </table>
+                          <br>
+                          <br>
+                          <hr>
+                          <h2>Credit Card Information:</h2>
+                <table>
+                    <tr><td>Card Type</td><td><select>
+                            <option>Visa</option>
+                            <option>American Express</option>
+                            <option>Master Card</option>
+                            <option>Discover</option>
+
+                          </select></td>
+
+                          <tr><td>Credit Number:</td><td><input type="text" name="pass" placeholder="xxxx-xxxx-xxxx-xxxx" pattern="^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"></td></tr>
+
+                          <tr><td><input type="submit" name="login" class="login login-submit" value="login"></tr></td>
+
+                          
+                  </table>
+<button  name="check" onclick="formUpdater()">session storage retrive</button>
+              </fieldset>
+
+              </form>
+     
+
+          </div> </center>
+
+
+
+    </body>
+
+</html>
